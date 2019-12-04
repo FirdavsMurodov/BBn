@@ -1,0 +1,216 @@
+
+
+
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+
+
+int main() {
+
+	float A, B, C;
+
+	cout << "Enter A and B: ";
+
+	cin >> A >> B;
+
+	C = B; B = A; A = C;
+
+	cout << "A: " << A << "; B: " << B;
+
+	return 0;
+
+}
+
+//1. Поменять местами содержимое переменных A и B и вывести новые
+
+//значения A и B.
+
+
+
+#include <iostream>
+
+using namespace std;
+
+
+
+int main() {
+
+	float A, B, C, Z;
+
+	cout << "Enter A,B and C: ";
+
+	cin >> A >> B >> C;
+
+	Z = A; A = C; C = B; B = Z;
+
+	cout << "A: " << A << "; B: " << B << "; C: " << C;
+
+	return 0;
+
+}
+
+//2. Даны переменные A, B, C. Изменить их значения, переместив
+
+//содержимое A в B, B — в C, C — в A, и вывести новые значения переменных
+
+//A, B, C.
+
+
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+
+
+int main() {
+
+	float A, B, C, Z;
+
+	cout << "Enter A,B and C: ";
+
+	cin >> A >> B >> C;
+
+	Z = A; A = B; B = C; C = Z;
+
+	cout << "A: " << A << "; B: " << B << "; C: " << C;
+
+	return 0;
+
+}
+
+//3. Даны переменные A, B, C. Изменить их значения, переместив
+
+//содержимое A в C, C — в B, B — в A, и вывести новые значения переменных
+
+//A, B, C.
+
+
+
+
+
+
+
+
+
+#include <iostream>
+
+#include <cmath>
+
+using namespace std;
+
+int main() {
+
+	float x;
+
+	cout << "Enter x: ";
+
+	cin >> x;
+
+	cout << "y = " << 3 * pow(x, 6) - 6 * pow(x, 2) - 7;
+
+	return 0;
+
+}
+
+//4. Найти значение функции y = 3x^6 − 6x^2 − 7 при данном значении x
+
+
+
+
+
+
+#include <cmath>
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+	float x;
+
+	cout << "Enter x: ";
+
+	cin >> x;
+
+	cout << "y = " << 4 * pow(x - 3, 6) - 7 * pow(x - 3, 3) + 2;
+
+	return 0;
+
+}
+
+//5. Найти значение функции y = 4(x−3)^6 − 7(x−3)^3 + 2 при данном
+
+//значении x
+
+
+
+
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+	float A, sobaka;
+
+	cout << "Enter A: ";
+
+	cin >> A;
+
+	A = A * A;
+
+	sobaka = A * A;
+
+	A = sobaka * sobaka;
+
+	cout << "In 8 degree: " << A;
+
+	return 0;
+
+}
+
+//7. Дано число A. Вычислить A 15 , используя две вспомогательные
+
+//переменные и пять операций умножения.
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+	float A, sobaka, koshka;
+
+	cout << "Enter A: ";
+
+	cin >> A;
+
+	A = A * A * A;
+
+	sobaka = A * A;
+
+	koshka = sobaka * sobaka * A;
+
+	cout << "In 15 degree: " << koshka;
+
+	return 0;
+
+}
