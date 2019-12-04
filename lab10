@@ -1,0 +1,128 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+	double a;
+	cout << "Enter price for 1 kg: ";
+	cin >> a;
+
+	for (double i = 0.1; i <= 1.0; i += 0.1) {
+		cout << "Price for " << i << " kg: " << a * i << endl;
+	}
+
+	return 0;
+}
+
+  
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+	int n;
+	cout << "Enter N: ";
+	cin >> n;
+
+	double res = 1, j = 1.1;
+
+	for (int i = 0; i < n; i++, j += 0.1) {
+		res *= j;
+	}
+
+	cout << "Result: " << res;
+
+	return 0;
+}
+
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+	int n, sum = 0;
+	cout << "Enter N: ";
+	cin >> n;
+
+	cout << "Sum now is: " << sum << endl;
+	for (int i = 1; i <= 2 * n - 1; i += 2) {
+		sum += i;
+		cout << "Sum now is: " << sum << endl;
+	}
+
+	cout << "Square of N: " << sum;
+
+	return 0;
+}
+
+
+
+
+
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+
+	int n; double a;
+	cout << "Enter n and a: ";
+	cin >> n >> a;
+
+	double sum;
+
+	for (int i = 0; i <= n; i++) {
+		sum += pow(a, i);
+	}
+	cout << "Result: " << sum;
+
+	return 0;
+}
+
+
+
+
+
+
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+
+	int n; double a, b;
+	cout << "Enter n and a: ";
+	cin >> n >> a;
+
+	double sum = 0;
+
+	for (int i = 0; i < n; i++) {
+		b = pow(-1, i) * pow(a, i);
+		sum += b;
+	}
+
+	cout << "Result: " << sum;
+
+	return 0;
+}
