@@ -1,0 +1,134 @@
+/*1. Даны две переменные целого типа: A и B. Если их значения не
+равны, то присвоить каждой переменной большее из этих значений, а если
+равны, то присвоить переменным нулевые значения. Вывести новые
+значения переменных A и B.*/
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int A, B;
+	cout << "Enter A and B: \n";
+	cin >> A >> B;
+	if (A != B) { if (A > B) B = A; else A = B; }
+	else { A = 0; B = 0; }
+	cout << "A: " << A << "\nB: " << B;
+	return 0;
+}
+
+
+
+
+/*2. Даны три числа. Найти сумму двух наибольших из них*/
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int A, B, C, x, y;
+	cout << "Enter A,B and C: \n";
+	cin >> A >> B >> C;
+	if (A > B) { x = A; if (B > C) y = B; else y = C; }
+	else { x = B; if (A > C) y = A; else y = C; }
+	cout << x + y;
+	return 0;
+}
+
+
+
+
+/*3. На плоскости расположены три точки: A, B, C. Определить, какая из
+двух последних точек (B или C) расположена ближе к A, и вывести эту точку
+и ее расстояние от точки A.*/
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+	int x1, y1, x2, x3, y3, y2, L1, L2, a, b, c, d;
+	cout << "Enter coordinater of point A: "; cin >> x1 >> y1;
+	cout << "Enter coordinater of point B: "; cin >> x2 >> y2;
+	cout << "Enter coordinater of point C: "; cin >> x3 >> y3;
+	a = pow(x1 - x2, 2);
+	b = pow(x1 - x3, 2);
+	c = pow(y1 - y2, 2);
+	d = pow(y1 - y3, 2);
+	L1 = sqrt(a + c); L2 = sqrt(b + d);
+	if (L1 < L2) cout << "B, length: " << L1;
+	else cout << "C, length: " << L2;
+	return 0;
+}
+
+
+
+
+/* 4. Даны координаты точки, не лежащей на координатных осях OX и
+OY. Определить номер координатной четверти, в которой находится данная
+точка */
+#include <iostream>
+using namespace std;
+
+int main() {
+	int x1, y1;
+	cout << "Enter coordinates of point (x1,y1): ";
+	cin >> x1 >> y1;
+	if (x1 == 0 || y1 == 0) cout << "error 404";
+	else {
+		if (x1 > 0) { if (y1 > 0) cout << "1"; else cout << "4"; }
+		else { if (y1 > 0) cout << "2"; else cout << "3"; }
+	}
+	return 0;
+}
+
+
+
+
+/* 5. Дано целое число. Вывести его строку-описание вида
+«отрицательное четное число», «нулевое число», «положительное нечетное
+число» и т. д. */
+#include <iostream>
+using namespace std;
+
+int main() {
+	int x;
+	cin >> x;
+	if (x == 0) cout << "nulevoe";
+	else {
+		if (x > 0) cout << "polojitelnoe";
+		else cout << "otritsatel'noe";
+		if (x % 2 == 0) cout << " chetnoe";
+		else cout << " nechetnoe";
+	}
+	cout << " chislo.";
+	return 0;
+}
+
+
+
+
+/* 6. Дано целое число, лежащее в диапазоне 1–999. Вывести его
+строку-описание вида «четное двузначное число», «нечетное трехзначное
+число» и т. д.. */
+#include <iostream>
+using namespace std;
+
+int main() {
+	int x;
+	cin >> x;
+	if (x >= 0 && x <= 999)
+	{
+		if (x == 0) cout << "nulevoe";
+		else
+		{
+			if (x % 2 == 0) cout << "chetnoe"; else cout << "nechetnoe";
+			if (x >= 100) cout << " trehznachnoe"; else cout << " dvuznachnoe";
+			cout << " chislo.";
+		}
+	}
+	else
+		cout << "Error 404";
+	return 0;
+}
+
+
+
