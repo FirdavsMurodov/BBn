@@ -1,0 +1,202 @@
+
+#include <iostream>
+
+#include <cmath>
+
+using namespace std;
+
+
+
+int main()
+
+{
+
+	float a;
+
+	cout << "Enter a in degrees: ";
+
+	cin >> a;
+
+	a = a / 180;
+
+	cout << "Angle a in pi*radians: " << a;
+
+	return 0;
+
+} //1 nomer
+
+
+
+
+
+
+
+
+
+#include <iostream>
+
+#include <cmath>
+
+using namespace std;
+
+
+
+int main()
+
+{
+
+	float a;
+
+	cout << "Enter a in pi*radians: ";
+
+	cin >> a;
+
+	a = a * 180;
+
+	cout << "Angle a in degrees: " << a;
+
+	return 0;
+
+} //2 nomer
+
+
+
+
+
+
+#include <iostream>
+
+#include <cmath>
+
+using namespace std;
+
+
+
+int main()
+
+{
+
+	float A, X, Y, kotenok, petushok;
+
+	cout << "Enter X, A and Y: ";
+
+	cin >> X >> A >> Y;
+
+	petushok = A / X;
+
+	kotenok = petushok * Y;
+
+	cout << "price per kg and " << Y << " kg of sweets: " << petushok << " and " << kotenok;
+
+	return 0;
+
+} //3 nomer 
+
+
+
+
+
+//4. Скорость первого автомобиля V1 км/ч, второго — V2 км/ч,
+
+//расстояние между ними S км. Определить расстояние между ними через T
+
+//часов, если автомобили удаляются друг от друга.
+
+#include <iostream>
+
+using namespace std;
+
+
+
+int main() {
+
+	float yagodica, lyashka, golova, palec;
+
+	cout << "First car speed: "; cin >> yagodica;
+
+	cout << "Second car speed: "; cin >> lyashka;
+
+	cout << "Distance between them: "; cin >> golova;
+
+	cout << "Time: "; cin >> palec;
+
+	if (palec < 0 || yagodica < 0 || lyashka < 0 || golova < 0) cout << "Error 404";
+
+	else cout << "Distance between cars in " << palec << " hours: " << golova + yagodica * palec + lyashka * palec;
+
+	return 0;
+
+}
+
+
+
+
+
+
+
+
+//5. Решить линейное уравнение A·x + B = 0, заданное своими
+
+//коэффициентами A и B (коэффициент A не равен 0).
+
+#include <iostream>
+
+using namespace std;
+
+
+
+int main() {
+
+	float A, B, x;
+
+	cout << "Enter A and B: "; cin >> A >> B;
+
+	if (A != 0) {
+
+		x = -B / A;
+
+		cout << "x = " << x;
+
+	}
+
+	else cout << "A cannot be zero";
+
+	return 0;
+
+}
+
+
+
+
+
+
+//6. Найти решение системы линейных уравнений вида
+
+//A1·x + B1·y = C1,  y=(C1-A1*x)/B1
+
+//A2·x + B2·y = C2,  y=(C2-A2*x)/B2
+
+#include <iostream>
+
+using namespace std;
+
+
+
+int main()
+
+{
+
+	double x, y, A1, B1, C1, A2, B2, C2;
+
+	cout << "Enter A1, B1, C1, A2, B2, C2: "; cin >> A1 >> B1 >> C1 >> A2 >> B2 >> C2;
+
+	x = ((B2 - B1)*C1) / (B2*A1 - A2 * B1);
+
+	y = (C1 - A1 * x) / B1;
+
+	cout << "x: " << x << "; y: " << y;
+
+	return 0;
+
+}
+
