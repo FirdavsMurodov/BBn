@@ -1,0 +1,185 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+	int n;
+	cout << "Enter size: ";
+	cin >> n;
+
+	int *a = new int[n];
+	int *b = new int[n];
+
+	for (int i = 0; i < n; i++) {
+		cout << "Enter element of a: ";
+		cin >> a[i];
+	}
+	for (int i = 0; i < n; i++) {
+		cout << "Enter element of b: ";
+		cin >> b[i];
+	}
+
+	for (int i = 0; i < n; i++) {
+		int temp = a[i];
+		a[i] = b[i];
+		b[i] = temp;
+	}
+
+	for (int i = 0; i < n; i++) {
+		cout << "A array: " << a[i] << endl;
+	}
+	cout << endl;
+	for (int i = 0; i < n; i++) {
+		cout << "B array: " << b[i] << endl;
+	}
+
+	return 0;
+}
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+	int n;
+	cout << "Enter size: ";
+	cin >> n;
+
+	double *a = new double[n];
+	double *b = new double[n];
+
+	for (int i = 0; i < n; i++) {
+		cout << "Enter element of a: ";
+		cin >> a[i];
+	}
+	double sum = 0;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j <= i; j++) {
+			sum += a[j];
+		}
+		b[i] = sum / (i + 1);
+		sum = 0;
+	}
+
+	for (int i = 0; i < n; i++) {
+		cout << "Element: " << b[i] << endl;
+	}
+
+	return 0;
+}
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+	int n, last_odd = 0;
+	cout << "Enter size: ";
+	cin >> n;
+
+	int *a = new int[n];
+
+	for (int i = 0; i < n; i++) {
+		cout << "Enter element: ";
+		cin >> a[i];
+		if (a[i] % 2 == 1) last_odd = a[i];
+	}
+
+	for (int i = 0; i < n; i++) {
+		if (a[i] % 2 == 1)
+			a[i] += last_odd;
+		cout << "Element: " << a[i] << endl;
+	}
+
+	return 0;
+}
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+	int n, min = 0, max = 0;
+	cout << "Enter size: ";
+	cin >> n;
+
+	int *arr = new int[n];
+
+	for (int i = 0; i < n; i++) {
+		cout << "Enter element: ";
+		cin >> arr[i];
+		min = arr[i] < arr[min] ? i : min;
+		max = arr[i] > arr[max] ? i : max;
+	}
+
+	if (min < max)
+		for (int i = min + 1; i < max; i++) {
+			arr[i] = 0;
+		}
+	else for (int i = max + 1; i < min; i++) {
+		arr[i] = 0;
+	}
+
+	for (int i = 0; i < n; i++) {
+		cout << "Element: " << arr[i] << endl;
+	}
+
+	return 0;
+}
+
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+	int n;
+	cout << "Enter size: ";
+	cin >> n;
+
+	int *arr = new int[n];
+
+	for (int i = 0; i < n; i++) {
+		cout << "Enter element: ";
+		cin >> arr[i];
+	}
+	int x = 0;
+	for (int i = 1; i < n; i++) {
+		if (arr[x] > arr[i]) {
+			int temp = arr[i];
+			arr[i] = arr[x];
+			arr[x] = temp;
+			x = i;
+		}
+	}
+
+	for (int i = 0; i < n; i++) {
+		cout << "Element: " << arr[i] << endl;
+	}
+
+	return 0;
+}
