@@ -1,0 +1,149 @@
+/* 1. Дан номер дня – целое число от 1 до 31 и месяца — целое число в
+диапазоне 1–12 (1 — январь, 2 — февраль и т. д.). Вывести дату в виде текста
+(например, «пятое января»). */
+#include <iostream>
+using namespace std;
+
+int main() {
+	int x, y;
+	cin >> x >> y;
+	if (x > 0 && x < 32 && y>0 && y < 13) {
+		string day[31] = { "pervoe", "vtoroе", "tret'e", "chetvertoe", "pyatoe", "shestoe", "sed'moe", "vos'moe",
+	"devyatoe", "desyatoe", "odinnadtsatoe", "dvenadtsatoe", "trinadtsatoe", "chetirnadtsatoe", "pyatnadtsatoe",
+	"shestnadsatoe", "semnadtsatoe", "vosemnadtsatoe", "devyatnadtsatoe", "dvadtsatoe", "dvadtsat' pervoe",
+	"dvadtsat' vtoroe", "dvadtsat' tret'e", "dvadtsat' chetvertoe", "dvadtsat' pyatoe", "dvadtsat' shestoe",
+	"dvadtsat' sed'moe", "dvadtsat' vos'moe", "dvadtsat' devyatoe", "tridtsatoe", "tridtsat' pervoe" };
+		string month[12] = { "yanvarya", "fevralya", "marta", "aprelya", "maya", "iunya", "iulya", "avgusta",
+	"sentyabrya", "oktyabrya", "noyabrya", "dekabrya" };
+		cout << day[x - 1] << " " << month[y - 1];
+	}
+	else cout << "error 404";
+	return 0;
+}
+
+
+
+
+/* 2. Робот может перемещаться в четырех направлениях («С» — север,
+«З» — запад, «Ю» — юг, «В» — восток) и принимать три цифровые
+команды: 0 — продолжать движение, 1 — поворот налево, −1 — поворот
+направо. Дан символ C — исходное направление робота и целое число N —
+посланная ему команда. Вывести направление робота после выполнения
+полученной команды */
+#include <iostream>
+using namespace std;
+
+//N-север,S-юг,W-запад,E-восток
+
+int main() {
+	int a, b;
+	char x;
+	char direct[4] = { 'N','W','S','E' };
+	cin >> x;
+	if (x == 'N') b = 0;
+	if (x == 'W') b = 1;
+	if (x == 'S') b = 2;
+	if (x == 'E') b = 3;
+	if (x != 'N'&&x != 'W'&&x != 'S'&&x != 'E') { cout << "Error 404"; return 1; }
+	cin >> a;
+	if (a <= 1 || a >= -1)
+	{
+		if (a == -1) b--;
+		if (a == 1) b++;
+	}
+	else { cout << "Error 404"; }
+	if (b == 4) b = 0;
+	if (b == -1) b = 3;
+	cout << direct[b];
+	return 0;
+}
+
+
+
+
+
+
+/* 3. Дано целое число в диапазоне 10–40, определяющее количество
+учебных заданий по некоторой теме. Вывести строку-описание указанного
+количества заданий, обеспечив правильное согласование числа со словами
+«учебное задание», например: 18 — «восемнадцать учебных заданий». */
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	string day[31] = { "desyat'","odinnatsat'","dvenatsat'","trinatsat'","chetirnadtsat'","pyatnadtsat'","shestnadtsat'","semnadtsat'","vosemnadtsat'","devyatnadtsat'", "dvadtsat'","dvadtsat' odno","dvadtsat' dva", "dvadtsat' tri", "dvadtsat' chetire", "dvadtsat' pyat'", "dvadtsat' shest'","dvadtsat' sem'","dvadtsat' vosem'","dvadtsat' devyat'","tridsat'","tridsat' odno","tridsat' dva","tridsat' tri","tridsat' chetire","tridsat' pyat'","tridsat' shest'","tridsat' sem'","tridsat' vosem'","tridsat' devyat'","sorok" };
+	int a;
+	cin >> a;
+	if (a <= 20 || (a >= 25 && a <= 30) || a >= 35) cout << day[a - 10] << " zadanii";
+	else {
+		if (a % 10 == 1) cout << day[a - 10] << " zadanie";
+		else
+			cout << day[a - 10] << " zadaniya";
+	}
+	return 0;
+}
+
+
+
+
+/* 4. Дано целое число в диапазоне 100–999. Вывести строку-описание
+данного числа, например: 256 — «двести пятьдесят шесть», 814 —
+«восемьсот четырнадцать» */
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+	int a, sot, des, ed;
+	cin >> a;
+	string sotni[9] = { "sto","dvesti","trista","chetiresta","pyatsot","shestsot","semsot","vosemsot","devyatsot" };
+	string desyatki[8] = { "dvadtsat'","tridtsat'","sorok","pyatdesyat","shestdesyat","semdesyat","vosemdesyat","devyanosto" };
+	string edinici[9] = { "odin","dva","tri","chetire","pyat'","shest'","sem'","vosem'","devyat'" };
+	string iskl[10] = { "desyat","odinnadtsat'","dvenadtsat'","trinadtsat'","chetirnadtsat'","pyatnadtsat'","shestnadtsat'","semnadtsat'","vosemnadtsat'","devyatnadtsat'" };
+	if (a >= 100 && a <= 999)
+	{
+		sot = a / 100;
+		des = (a % 100) / 10;
+		ed = a % 10;
+		cout << sotni[sot - 1] << ' ';
+		if (des > 1) { cout << desyatki[des - 2] << ' '; cout << edinici[ed - 1]; }
+		else
+		{
+			if (des > 0) cout << iskl[ed];
+			else cout << edinici[ed - 1];
+		}
+	}
+	else cout << "Invalid values";
+	return 0;
+}
+
+
+
+/*
+5. В восточном календаре принят 60-летний цикл, состоящий из 12-
+летних подциклов, обозначаемых названиями цвета: зеленый, красный,
+желтый, белый и черный. В каждом подцикле годы носят названия
+животных: крысы, коровы, тигра, зайца, дракона, змеи, лошади, овцы,
+обезьяны, курицы, собаки и свиньи. По номеру года определить его название,
+если 1984 год — начало цикла: «год зеленой крысы».
+*/
+#include <iostream>
+#include <cmath>
+#include <string>
+using namespace std;
+
+int main()
+{
+	int a, col, anim;
+	cin >> a;
+	string color[6] = { "zeleno","krasno","jelto","belo","sine","cherno" };
+	string animal[12] = { "i krisi","i korovi","go tigra","go zaica","go drakona","i zmei","i loshadi","i ovci","i obez'yani","i kurici","i sobaki","i svin'i", };
+	if (a >= 0) {
+		col = ((a - 4) % 12) / 2;
+		anim = ((a - 4) % 60) % 12;
+		cout << "God " << color[col] << animal[anim];
+	}
+	else cout << "Invalid values";
+}
+
