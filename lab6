@@ -1,0 +1,99 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+    int n;
+    cout << "Enter seconds: ";
+    cin >> n;
+
+    cout << "Seconds passed: " << n % 60;
+
+    return 0;
+}
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+    int k;
+
+    cout << "Enter day: ";
+    cin >> k;
+
+    cout << "Day of week: " << k % 7;
+
+    return 0;
+}
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int k, n;
+
+    cout << "Enter day of year: ";
+    cin >> k;
+    cout << "Enter day of week of 1 day: ";
+    cin >> n;
+
+    cout << "Day of week: " << (n + k % 7 - 1) % 7;
+
+    return 0;
+}
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+    int a, b, c;
+
+    cout << "Enter A and B: ";
+    cin >> a >> b;
+    cout << "Enter C: ";
+    cin >> c;
+
+    int m, n;
+    m = a - a % c;
+    n = b - b % c;
+
+    cout << "Count of squares: " << (m * n) / (c * c) << endl;
+    cout << "Free space: " << (a * b) - (m * n);
+
+    return 0;
+}
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+    int a, century;
+    cout << "Enter year: ";
+    cin >> a;
+
+    century = a % 100 > 0 ? a / 100 + 1 : a / 100;
+    cout << century << " century";
+    return 0;
+}
