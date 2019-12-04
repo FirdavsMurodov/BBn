@@ -1,0 +1,292 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+    int n, m;
+    cout << "Enter size(m * n): ";
+    cin >> m >> n;
+
+    int **a = new int*[m];
+    for(int i = 0; i < m; i++)
+        a[i] = new int[n];
+
+    for(int i = 0; i < m; i++){
+        cout << "Enter elements of " << i << " string" << endl;
+        for(int j = 0; j < n; j++){
+            cout << "Enter element: ";
+            cin >> a[i][j];
+        }
+    }
+
+    cout << "Current matrix: " << endl;
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++){
+            cout << a[i][j] << ' ';
+        }
+        cout << endl;
+    }
+
+    int min, max;
+
+    for(int i = 0; i < m; i++){
+        min = 0; max = 1;
+        for(int j = 2; j < n; j++){
+            min = a[i][min] > a[i][j] ? j : min;
+            max = a[i][max] < a[i][j] ? j : max;
+        }
+        int temp = a[i][min];
+        a[i][min] = a[i][max];
+        a[i][max] = temp;
+    }
+
+    cout << "New matrix: " << endl;
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++){
+            cout << a[i][j] << ' ';
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+
+  
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+    int n, m;
+    cout << "Enter size(m * n): ";
+    cin >> m >> n;
+
+    int **a = new int*[m];
+    for(int i = 0; i < m; i++)
+        a[i] = new int[n];
+
+    for(int i = 0; i < m; i++){
+        cout << "Enter elements of " << i << " string" << endl;
+        for(int j = 0; j < n; j++){
+            cout << "Enter element: ";
+            cin >> a[i][j];
+        }
+    }
+
+    cout << "Current matrix: " << endl;
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++){
+            cout << a[i][j] << ' ';
+        }
+        cout << endl;
+    }
+
+    int min = 0, max = 0, min_c = 0, max_c = 0;
+
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++){
+            if(a[i][j] < a[min][min_c]){
+                min = i;
+                min_c = j;
+            }
+            else if(a[i][j] > a[max][max_c]){
+                max = i;
+                max_c = j;
+            }
+        }
+    }
+
+    for(int i = 0; i < m; i++){
+        int temp = a[i][min_c];
+        a[i][min_c] = a[i][max_c];
+        a[i][max_c] = temp;
+    }
+
+    cout << "New matrix: " << endl;
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++){
+            cout << a[i][j] << ' ';
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+    int n, m;
+    cout << "Enter size(m * n): ";
+    cin >> m >> n;
+
+    int **a = new int*[m];
+    for(int i = 0; i < m; i++)
+        a[i] = new int[n];
+
+    for(int i = 0; i < m; i++){
+        cout << "Enter elements of " << i << " string" << endl;
+        for(int j = 0; j < n; j++){
+            cout << "Enter element: ";
+            cin >> a[i][j];
+        }
+    }
+
+    cout << "Current matrix: " << endl;
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++){
+            cout << a[i][j] << ' ';
+        }
+        cout << endl;
+    }
+
+    for(int i = 0, x = m / 2; i < m / 2 && x < m; i++, x++){
+        for(int j = 0, y = m / 2; j <= n / 2 && y < m; j++, y++){
+            int temp = a[i][j];
+            a[i][j] = a[x][y];
+            a[x][y] = temp;
+        }
+    }
+
+    cout << "New matrix: " << endl;
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++){
+            cout << a[i][j] << ' ';
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+    int n, m;
+    cout << "Enter size(m * n): ";
+    cin >> m >> n;
+
+    int **a = new int*[m];
+    for(int i = 0; i < m; i++)
+        a[i] = new int[n];
+
+    for(int i = 0; i < m; i++){
+        cout << "Enter elements of " << i << " string" << endl;
+        for(int j = 0; j < n; j++){
+            cout << "Enter element: ";
+            cin >> a[i][j];
+        }
+    }
+
+    cout << "Current matrix: " << endl;
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++){
+            cout << a[i][j] << ' ';
+        }
+        cout << endl;
+    }
+
+    for(int i = m - 1; i >= 0; i--){
+        for(int j = 0; j < i; j++){
+            if(a[j][0] > a[j + 1][0]){
+                for(int k = 0; k < n; k++){
+                    int temp = a[j][k];
+                    a[j][k] = a[j + 1][k];
+                    a[j + 1][k] = temp;
+                }
+            }
+        }
+    }
+
+    cout << "New matrix: " << endl;
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++){
+            cout << a[i][j] << ' ';
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+    int m;
+    cout << "Enter size(m * m): ";
+    cin >> m;
+
+    int **a = new int*[m];
+    for(int i = 0; i < m; i++)
+        a[i] = new int[m];
+
+    for(int i = 0; i < m; i++){
+        cout << "Enter elements of " << i << " string" << endl;
+        for(int j = 0; j < m; j++){
+            cout << "Enter element: ";
+            cin >> a[i][j];
+        }
+    }
+    cout << "Current matrix: " << endl;
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < m; j++){
+            cout << a[i][j] << ' ';
+        }
+        cout << endl;
+    }
+
+    int *b = new int[m + m - 1];
+    int i = m - 1, x = 0;
+    for(int k = 0; k < m + m - 1; k++){
+        int z = i;
+        b[k] = 0;
+        if(i == 0){
+            for(int j = x; z < m && j < m; j++, z++){
+                b[k] += a[z][j];
+            }
+            x++;
+        }
+        else {
+            for(int j = x; j <= z && z < m; j++, z++){
+                b[k] += a[z][j];
+            }
+            i--;
+        }
+    }
+
+    for(int i = 0; i < m + m - 1; i++){
+        cout << b[i] << endl;
+    }
+
+    return 0;
+}
